@@ -9,4 +9,4 @@ VCC is an automated software that will check whether a discord video will likely
 - It does a basic sig scanning for a 8+ bytes skip over box in the mp4 file format
 
 ## Download
-You can download the file by clicking on releases and downloading the `.exe` file
+You can download the file by clicking on releases and downloading the `.exe` file or just compiling it using g++.
