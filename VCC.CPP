@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
 
 	HANDLE hFile = CreateFileA((LPCSTR)argv[1], GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     
-    if(hFile < 0) return -1;
+        if(hFile < 0) return -1;
 	
 	DWORD  fileSize = GetFileSize(hFile, NULL);//no high order doubleword
 	PVOID  mem      = VirtualAlloc(NULL, (SIZE_T)fileSize, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
