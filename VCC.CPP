@@ -1,6 +1,5 @@
 #include <windows.h>
 #include <stdio.h>
-#include <iostream>
 
 bool hasExt(const char* path, const char* ext) {
     char* ext1 = new char[strlen(path)];
@@ -69,18 +68,17 @@ int main(int argc, char* argv[]) {
 		return EXIT_FAILURE;
 	}
 	
-	LPCSTR  signature1 = "\x62\x75\x64\x74\x61\x00\x00\x00\x5A\x73\x6B\x69\x70"; 
+	LPCSTR  signature1 = "\x5A\x73\x6B\x69\x70";
 	DWORD   offset     = findSig((BYTE*)mem, fileSize, signature1, true);
 
 	if(offset){
 		printf("\x1B[31m[+] Found strange object at offset: 0x%x\033[0m\n", offset);
-		printf("\x1B[31m[+] Might crash discord!\033[0m");
+		printf("\x1B[31m[+] Might crash discord!\033[0m\n");
 	} else {
-		printf("\x1B[32m[+] Everything ok!\033[0m");
+		printf("\x1B[32m[+] Everything ok!\033[0m\n");
 	}
 	
-	std::cout << std::endl;
-	std::cin.get();
+	system("PAUSE");
 	VirtualFree(mem, fileSize, MEM_RELEASE);
                   CloseHandle(hFile);
 	
